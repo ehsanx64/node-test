@@ -1,0 +1,15 @@
+{
+  "name": "node-test-handlebars",
+  "version": "1.0.0",
+  "description": "Handlebars related tests",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ehsan Mohammadi <ehsanx64@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "handlebars": "^4.7.6"
+  }
+}
