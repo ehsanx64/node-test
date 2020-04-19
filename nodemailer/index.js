@@ -25,16 +25,9 @@ async function main() {
         subject: 'Test',
         // text: 'The email text sent at: ' + new Date(),
         html: `
-        <!DOCTYPE html>
-        <html lang="en">
-            <head>
-                <meta charset="utf-8" />
-                <title>title</title>
-            </head>
-            <body>
+            <div class="email-template-wrapper">
                 <h1>Email Template</h1>
-            </body>
-        </html>
+            </div>
         `
     };
 
