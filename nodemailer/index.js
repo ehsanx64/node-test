@@ -1,8 +1,8 @@
 'use strict';
 
 require('dotenv').config();
-console.log(process.env.SMTP_IP);
 const nodemailer = require('nodemailer');
+const fs = require('fs');
 
 async function main() {
     var transporter = nodemailer.createTransport({
@@ -19,16 +19,14 @@ async function main() {
         }
     });
 
+    var htmlTemplate = fs.readFileSync(__dirname + '/EmailTemplate.html', 'utf-8');
+
     var message = {
         from: process.env.EMAIL_FROM,
         to: process.env.EMAIL_TO,
         subject: 'Test',
         // text: 'The email text sent at: ' + new Date(),
-        html: `
-            <div class="email-template-wrapper" style="direction: rtl; text-align: right; font-family: Tahoma, Homa;">
-                <h1>قالب ایمیل</h1>
-            </div>
-        `
+        html: htmlTemplate
     };
 
     var info = transporter.sendMail(message);
