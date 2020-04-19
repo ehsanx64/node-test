@@ -23,7 +23,19 @@ async function main() {
         from: process.env.EMAIL_FROM,
         to: process.env.EMAIL_TO,
         subject: 'Test',
-        text: 'The email text sent at: ' + new Date(),
+        // text: 'The email text sent at: ' + new Date(),
+        html: `
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="utf-8" />
+                <title>title</title>
+            </head>
+            <body>
+                <h1>Email Template</h1>
+            </body>
+        </html>
+        `
     };
 
     var info = transporter.sendMail(message);
